@@ -1,0 +1,91 @@
+.container{
+    max-width: 1440px;
+        margin: 0 auto;
+        padding-right: 15px;
+    padding-left: 15px;
+    
+}
+
+.goBackBtn{
+    font-size: 15px;
+    cursor: pointer;
+    display: block;
+    cursor: pointer;
+    padding: 4px 65px;
+    min-width: 112px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    line-height: 1.5;
+    background-color: #e50914;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .45);
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+.movieInfo{
+    max-width: 600px;    
+}
+
+.movieTitle{
+    line-height: 1.4;  
+    margin: 0;     
+}
+
+.overviewTitle{
+    color: #fff;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.greyText{
+    color: #a3a3a3;
+    font-size: 20px;
+        font-weight: 400;
+        line-height: 27px;
+}
+
+.imageContainer{
+    display: block;
+}
+
+.infoWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.additionalList{
+    list-style: none;
+    display: flex;
+   padding: 0;
+   gap: 40px;
+}
+
+.additionaWrapper{
+    margin-top: 100px;
+}
+
+.additionalLink{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+    border: 1px solid #888;
+    border-radius: 2px;
+    line-height: 15px;
+    padding: 4px 16px;
+}
+
+.additionalLink:visited{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+}
+
+.additionalLink:hover,
+.additionalLink:active{
+    color: rgb(229, 9, 20);
+}
