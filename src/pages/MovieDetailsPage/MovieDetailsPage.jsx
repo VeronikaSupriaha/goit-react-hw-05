@@ -1,4 +1,10 @@
-import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
+import {
+  useParams,
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import css from './MovieDetailsPage.module.css';
@@ -7,6 +13,7 @@ export default function MovieDetailsPage() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
   const previousLocation = useRef(location.state?.from ?? '/');
 
   useEffect(() => {
@@ -31,7 +38,10 @@ export default function MovieDetailsPage() {
 
   return (
     <div className={css.container}>
-      <button className={css.goBackBtn} onClick={() => window.history.back()}>
+      <button
+        className={css.goBackBtn}
+        onClick={() => navigate(previousLocation.current)}
+      >
         Go back
       </button>
       <div className={css.infoWrapper}>
