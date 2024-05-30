@@ -1,11 +1,13 @@
-import { useParams, Link, Outlet } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
+import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import css from './MovieDetailsPage.module.css';
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+  const location = useLocation();
+  const previousLocation = useRef(location.state?.from ?? '/');
 
   useEffect(() => {
     const url = `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`;
@@ -51,12 +53,20 @@ export default function MovieDetailsPage() {
             <h3 className={css.overviewTitle}>Additional Information</h3>
             <ul className={css.additionalList}>
               <li>
-                <Link to={`cast`} className={css.additionalLink}>
+                <Link
+                  to={`cast`}
+                  className={css.additionalLink}
+                  state={{ from: previousLocation.current }}
+                >
                   Cast
                 </Link>
               </li>
               <li>
-                <Link to={`reviews`} className={css.additionalLink}>
+                <Link
+                  to={`reviews`}
+                  className={css.additionalLink}
+                  state={{ from: previousLocation.current }}
+                >
                   Reviews
                 </Link>
               </li>
